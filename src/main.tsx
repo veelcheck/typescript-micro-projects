@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     element: <SnakeGame />,
   },
   {
-    path: '/child-to-parent',
+    path: 'child-to-parent',
     element: <ParentComponent />,
   },
 ]);

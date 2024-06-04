@@ -1,4 +1,4 @@
-import ProjectLink from './components/HomePage-additional/ProjectLink';
+import ProjectLink from './components/HomePage-additional/ProjectLink.tsx';
 
 function HomePage() {
   return (
