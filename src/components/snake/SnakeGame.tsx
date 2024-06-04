@@ -54,8 +54,9 @@ function SnakeGame() {
           </button>
         </div>
         {gameOver && (
-          <p className='mt-6 md:text-3xl text-red-300'>
+          <p className='mt-6 md:text-3xl text-red-300 border px-4 py-6 border-red-300'>
             Game over!
+            <br />
             {collision === 'wall'
               ? ' You hit the wall, dummy.'
               : ' You were trying to eat your own flesh, yuk.'}

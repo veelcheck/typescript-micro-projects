@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.tsx';
+import HomePage from './HomePage.tsx';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import PageNotFound from './components/PageNotFound.tsx';
 import Todo from './components/Todo.tsx';
-import SnakeGame from './components/snakeComponents/SnakeGame.tsx';
+import SnakeGame from './components/snake/SnakeGame.tsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <HomePage />,
     errorElement: <PageNotFound />,
   },
   {

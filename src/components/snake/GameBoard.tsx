@@ -176,21 +176,21 @@ const GameBoard: React.FC<GameBoardProps> = ({
             L
           </DirectionButton>
           <DirectionButton
-            direction='up'
+            direction='right'
             setDirection={setDirection}>
-            U
+            R
           </DirectionButton>
         </div>
         <div className='flex gap-6 justify-end'>
           <DirectionButton
+            direction='up'
+            setDirection={setDirection}>
+            U
+          </DirectionButton>
+          <DirectionButton
             direction='down'
             setDirection={setDirection}>
             D
-          </DirectionButton>
-          <DirectionButton
-            direction='right'
-            setDirection={setDirection}>
-            R
           </DirectionButton>
         </div>
       </div>
