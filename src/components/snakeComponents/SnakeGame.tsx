@@ -37,7 +37,7 @@ function SnakeGame() {
   }, [gameOver]);
 
   return (
-    <section className='text-amber-50 container mx-auto p-2 flex flex-col items-center text-center gap-2 sm:mt-6'>
+    <section className='text-amber-50 container mx-auto p-2 flex flex-col items-center text-center gap-2 mt-6'>
       <h1 className='text-2xl md:text-3xl text-green-200 font-bold'>
         This is for Alice because she had birthday.
         <span className='text-red-300'> Again.</span>

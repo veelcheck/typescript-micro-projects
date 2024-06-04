@@ -62,7 +62,7 @@ function AliceComponent() {
         </button>
       </p>
       {showParagraph && (
-        <p className='text-green-200 md:text-3xl md:my-4 border-b md:pb-4'>
+        <p className='text-green-200 md:text-3xl md:my-4 md:pb-4'>
           Dworcowa robi więża.{' '}
           <span className='text-red-200'>{revealedText}</span>
         </p>
