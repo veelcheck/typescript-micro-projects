@@ -54,7 +54,7 @@ function AliceComponent() {
 
   return (
     <>
-      <p className='text-xs md:text-2xl flex flex-col  md:flex-row gap-4 items-center'>
+      <p className='text-xs  md:text-2xl flex flex-col  md:flex-row gap-4 items-center'>
         If you are THE Alice in question, click the button.
         <button
           className='bg-gradient-to-r from-green-400 to-blue-500 p-2 md:px-4 rounded-sm text-fuchsia-950 font-bold hover:px-3 md:hover:px-5'
@@ -63,7 +63,7 @@ function AliceComponent() {
         </button>
       </p>
       {showParagraph && (
-        <p className='text-green-200 md:text-3xl md:my-4 md:pb-4'>
+        <p className='text-green-200 md:text-3xl md:my-4 md:pb-4 mt-20'>
           Dworcowa robi więża.{' '}
           <span className='text-red-200'>{revealedText}</span>
         </p>

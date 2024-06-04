@@ -5,7 +5,8 @@ import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import PageNotFound from './components/PageNotFound.tsx';
 import Todo from './components/Todo.tsx';
-import SnakeGame from './components/snake/SnakeGame.tsx';
+import SnakeGame from './components/Snake/SnakeGame.tsx';
+import ParentComponent from './components/ChildToParent/ParentComponent.tsx';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: 'snake-for-alice',
     element: <SnakeGame />,
+  },
+  {
+    path: '/child-to-parent',
+    element: <ParentComponent />,
   },
 ]);
 
