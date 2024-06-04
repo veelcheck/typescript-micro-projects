@@ -1,5 +1,3 @@
-import React from 'react';
-
 function ParentComponent() {
   return (
     <section className='text-amber-50'>
