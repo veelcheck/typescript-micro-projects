@@ -47,6 +47,11 @@ function SnakeGame() {
         <div className='flex flex-row  gap-4 justify-center md:text-xl'>
           <p>Score: {score}</p>
           <p>Highest: {highestScore}</p>
+          <button
+            className='border rounded-sm px-2'
+            onClick={handleResetgame}>
+            RESET
+          </button>
         </div>
         {gameOver && (
           <p className='mt-6 md:text-3xl text-red-300'>
