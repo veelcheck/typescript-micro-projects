@@ -12,7 +12,6 @@ const toUpperFirstLetter = (string: string) =>
     .map((word) => word[0].toUpperCase() + word.slice(1))
     .join(' ');
 
-
 function Todo() {
   const [todos, setTodos] = useLocalStorage<string[]>('todos', []);
   const [newTodo, setNewTodo] = useState<string>('');
@@ -110,21 +109,23 @@ function Todo() {
               <span className=' min-w-72 text-center sm:text-left flex-1'>
                 {toUpperFirstLetter(todo)}
               </span>
-              <button
-                className={deleteButton}
-                onClick={() => deleteTodo(index)}>
-                Delete
-              </button>
-              <button
-                className={moveButton}
-                onClick={() => moveTodoUp(index)}>
-                Up
-              </button>
-              <button
-                className={moveButton}
-                onClick={() => moveTaskDown(index)}>
-                Down
-              </button>
+              <div className='flex gap-2'>
+                <button
+                  className={deleteButton}
+                  onClick={() => deleteTodo(index)}>
+                  Delete
+                </button>
+                <button
+                  className={moveButton}
+                  onClick={() => moveTodoUp(index)}>
+                  Up
+                </button>
+                <button
+                  className={moveButton}
+                  onClick={() => moveTaskDown(index)}>
+                  Down
+                </button>
+              </div>
             </li>
           ))}
         </ul>
@@ -132,6 +133,5 @@ function Todo() {
     </>
   );
 }
-
 
 export default Todo;

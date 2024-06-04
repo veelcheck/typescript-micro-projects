@@ -167,8 +167,8 @@ const GameBoard: React.FC<GameBoardProps> = ({
         height={300}
         className='bg-amber-50 mt-4'
       />
-      <div className='flex flex-col gap-2 mx-auto w-44 mt-6'>
-        <div className='flex gap-2'>
+      <div className='flex flex-col gap-2 mx-auto w-60 mt-6'>
+        <div className='flex gap-6'>
           <button
             className='border border-4 size-12 rounded-full'
             onClick={() => setDirection('left')}>
@@ -180,7 +180,7 @@ const GameBoard: React.FC<GameBoardProps> = ({
             U
           </button>
         </div>
-        <div className='flex gap-2 justify-end'>
+        <div className='flex gap-6 justify-end'>
           <button
             className='border border-4 size-12 rounded-full'
             onClick={() => setDirection('down')}>
