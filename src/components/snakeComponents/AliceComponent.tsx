@@ -3,7 +3,8 @@ import { useEffect, useState, useRef } from 'react';
 function AliceComponent() {
   const [showParagraph, setShowParagraph] = useState(false);
   const [revealedText, setRevealedText] = useState('');
-  const textToReveal = 'Ssssssss...'; // 11 characters
+
+  const textToReveal = 'Ssssssss...';
   const timeoutRef = useRef<number | null>(null);
 
   const handleButtonClick = () => {
@@ -58,7 +59,7 @@ function AliceComponent() {
         <button
           className='bg-gradient-to-r from-green-400 to-blue-500 p-2 md:px-4 rounded-sm text-fuchsia-950 font-bold hover:px-3 md:hover:px-5'
           onClick={handleButtonClick}>
-          This one.
+          This one
         </button>
       </p>
       {showParagraph && (

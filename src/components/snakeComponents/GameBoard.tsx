@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import DirectionButton from './DirectionButton';
 
 type GameBoardProps = {
   score: number;
@@ -169,29 +170,28 @@ const GameBoard: React.FC<GameBoardProps> = ({
       />
       <div className='flex flex-col gap-2 mx-auto w-60 mt-6'>
         <div className='flex gap-6'>
-          <button
-            className='border border-4 size-12 rounded-full'
-            onClick={() => setDirection('left')}>
+          <DirectionButton
+            direction='left'
+            setDirection={setDirection}>
             L
-          </button>
-          <button
-            className='border border-4 size-12 rounded-full'
-            onClick={() => setDirection('up')}>
+          </DirectionButton>
+          <DirectionButton
+            direction='up'
+            setDirection={setDirection}>
             U
-          </button>
+          </DirectionButton>
         </div>
         <div className='flex gap-6 justify-end'>
-          <button
-            className='border border-4 size-12 rounded-full'
-            onClick={() => setDirection('down')}>
+          <DirectionButton
+            direction='down'
+            setDirection={setDirection}>
             D
-          </button>
-
-          <button
-            className='border border-4 size-12 rounded-full'
-            onClick={() => setDirection('right')}>
+          </DirectionButton>
+          <DirectionButton
+            direction='right'
+            setDirection={setDirection}>
             R
-          </button>
+          </DirectionButton>
         </div>
       </div>
     </div>
