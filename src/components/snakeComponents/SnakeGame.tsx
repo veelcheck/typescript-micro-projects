@@ -43,8 +43,8 @@ function SnakeGame() {
         <span className='text-red-300'> Again.</span>
       </h1>
       <AliceComponent />
-      <div>
-        <div className='flex flex-row  gap-4 justify-center md:text-xl'>
+      <div className='md:flex md:flex-row-reverse md:gap-14'>
+        <div className='flex flex-row md:flex-col gap-4 justify-center md:justify-start md:text-xl md:mt-6'>
           <p>Score: {score}</p>
           <p>Highest: {highestScore}</p>
           <button

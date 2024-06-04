@@ -54,7 +54,7 @@ function AliceComponent() {
 
   return (
     <>
-      <p className='text-xs md:text-2xl flex flex-col  gap-4 items-center'>
+      <p className='text-xs md:text-2xl flex flex-col  md:flex-row gap-4 items-center'>
         If you are THE Alice in question, click the button.
         <button
           className='bg-gradient-to-r from-green-400 to-blue-500 p-2 md:px-4 rounded-sm text-fuchsia-950 font-bold hover:px-3 md:hover:px-5'

@@ -168,8 +168,8 @@ const GameBoard: React.FC<GameBoardProps> = ({
         height={300}
         className='bg-amber-50 mt-4'
       />
-      <div className='flex flex-col gap-2 mx-auto w-60 mt-6'>
-        <div className='flex gap-6'>
+      <div className='flex flex-col gap-2 mx-auto w-60 mt-6 xl:hidden'>
+        <div className='flex gap-6 '>
           <DirectionButton
             direction='left'
             setDirection={setDirection}>
