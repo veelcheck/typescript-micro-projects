@@ -5,8 +5,8 @@ import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import PageNotFound from './components/PageNotFound.tsx';
 import Todo from './components/Todo.tsx';
-import SnakeGame from './components/snake/SnakeGame.tsx';
-import ParentComponent from './components/childToParent/ParentComponent.tsx';
+import SnakeGame from './components/SnakeGame.tsx';
+import ParentComponent from './components/ParentComponent.tsx';
 
 const router = createBrowserRouter([
   {

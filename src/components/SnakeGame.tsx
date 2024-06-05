@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLocalStorage } from '../../lib/hooks';
+import { useLocalStorage } from '../lib/hooks';
 import GameBoard from './GameBoard';
 import AliceComponent from './AliceComponent';
 
