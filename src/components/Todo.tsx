@@ -73,7 +73,7 @@ function Todo() {
   return (
     <>
       <section className='flex flex-col gap-2 container mx-auto items-center md:justify-center min-h-screen p-2 font-mono'>
-        <h1 className='text-4xl text-center text-amber-600'>
+        <h1 className='text-4xl text-center text-amber-600 pt-8 md:pt-2'>
           Todo List for Busy People
         </h1>
         <form

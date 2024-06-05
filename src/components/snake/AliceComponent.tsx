@@ -53,7 +53,7 @@ function AliceComponent() {
   }, [showParagraph]);
 
   return (
-    <>
+    <div className=''>
       <p className='text-xs  md:text-2xl flex flex-col  md:flex-row gap-4 items-center'>
         If you are THE Alice in question, click the button.
         <button
@@ -68,7 +68,7 @@ function AliceComponent() {
           <span className='text-red-200'>{revealedText}</span>
         </p>
       )}
-    </>
+    </div>
   );
 }
 
