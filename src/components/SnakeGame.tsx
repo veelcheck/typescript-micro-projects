@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useLocalStorage } from '../lib/hooks';
 import GameBoard from './GameBoard';
 import AliceComponent from './AliceComponent';
+import BackButton from './BackButton';
 
 function SnakeGame() {
   const [score, setScore] = useState(0);
@@ -37,7 +38,8 @@ function SnakeGame() {
   }, [gameOver]);
 
   return (
-    <section className='text-amber-50 container mx-auto p-2 flex flex-col items-center text-center gap-2 mt-6'>
+    <section className='text-amber-50 md:min-h-screen md:justify-center container mx-auto p-2 flex flex-col items-center text-center gap-2 mt-6'>
+      <BackButton />
       <h1 className='text-2xl md:text-3xl text-green-200 font-bold uppercase'>
         This is for Alice because she had birthday.
         <span className='text-red-300'> Again.</span>

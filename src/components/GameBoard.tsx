@@ -152,7 +152,7 @@ const GameBoard: React.FC<GameBoardProps> = ({
         drawSnake();
         drawApple();
       }
-    }, 100);
+    }, 150);
 
     return () => {
       window.removeEventListener('keydown', handleKeyPress);

@@ -9,3 +9,12 @@
 body {
   background: #111827;
 }
+
+.checkbox-custom {
+  @apply appearance-none w-5 h-5 border-2 border-emerald-600 rounded-md cursor-pointer;
+}
+
+.checkbox-custom:checked::after {
+  content: '';
+  @apply block w-2.5 h-5 border-emerald-600 border-r-2 border-b-2 transform rotate-45 translate-x-1 translate-y-[-6px];
+}

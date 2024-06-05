@@ -1,10 +1,12 @@
 import { ChangeEvent, useState } from 'react';
 import { useLocalStorage } from '../lib/hooks.ts';
+import BackButton from './BackButton.tsx';
 
-const buttonStyle =
-  'w-full sm:w-fit py-2 px-4 rounded-md font-bold text-white ';
+const buttonStyle = 'w-full sm:w-fit py-2 px-4 rounded-md font-bold text-white';
 const deleteButton = `bg-rose-600 hover:bg-rose-700 focus:bg-rose-700 ${buttonStyle}`;
 const moveButton = `bg-emerald-800 hover:bg-emerald-900 focus:bg-emerald-900 ${buttonStyle}`;
+const completedButtonDelete = 'bg-red-900 hover:bg-red-950 focus:bg-red-950';
+const completedButtonMove = 'bg-cyan-900 hover:bg-cyan-950 focus:bg-cyan-950';
 
 const toUpperFirstLetter = (string: string) =>
   string
@@ -15,6 +17,11 @@ const toUpperFirstLetter = (string: string) =>
 function Todo() {
   const [todos, setTodos] = useLocalStorage<string[]>('todos', []);
   const [newTodo, setNewTodo] = useState<string>('');
+  const [completedTodos, setCompletedTodos] = useLocalStorage<boolean[]>(
+    'completedTodos',
+    []
+  );
+  const [movingTodoIndex, setMovingTodoIndex] = useState<number | null>(null);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setNewTodo(e.target.value);
@@ -25,16 +32,23 @@ function Todo() {
 
     if (newTodo.trim() !== '') {
       setTodos([...todos, newTodo]);
+      setCompletedTodos([...completedTodos, false]);
       setNewTodo('');
     }
   };
 
   const deleteTodo = (index: number) => {
     const updatedTodos = todos.filter((_, i) => i !== index);
+    const updatedCompletedTodos = completedTodos.filter((_, i) => i !== index);
     setTodos(updatedTodos);
+    setCompletedTodos(updatedCompletedTodos);
   };
 
-  const [movingTodoIndex, setMovingTodoIndex] = useState<number | null>(null);
+  const toggleCompleteTodo = (index: number) => {
+    const updatedCompletedTodos = [...completedTodos];
+    updatedCompletedTodos[index] = !updatedCompletedTodos[index];
+    setCompletedTodos(updatedCompletedTodos);
+  };
 
   const moveTodoUp = (index: number) => {
     setMovingTodoIndex(index);
@@ -42,12 +56,18 @@ function Todo() {
     setTimeout(() => {
       if (index > 0) {
         const updatedTodos = [...todos];
+        const updatedCompletedTodos = [...completedTodos];
         [updatedTodos[index], updatedTodos[index - 1]] = [
           updatedTodos[index - 1],
           updatedTodos[index],
         ];
+        [updatedCompletedTodos[index], updatedCompletedTodos[index - 1]] = [
+          updatedCompletedTodos[index - 1],
+          updatedCompletedTodos[index],
+        ];
 
         setTodos(updatedTodos);
+        setCompletedTodos(updatedCompletedTodos);
         setMovingTodoIndex(null);
       }
     }, 800); // Adjust the delay to match a transition duration
@@ -59,12 +79,18 @@ function Todo() {
 
       setTimeout(() => {
         const updatedTodos = [...todos];
+        const updatedCompletedTodos = [...completedTodos];
         [updatedTodos[index], updatedTodos[index + 1]] = [
           updatedTodos[index + 1],
           updatedTodos[index],
         ];
+        [updatedCompletedTodos[index], updatedCompletedTodos[index + 1]] = [
+          updatedCompletedTodos[index + 1],
+          updatedCompletedTodos[index],
+        ];
 
         setTodos(updatedTodos);
+        setCompletedTodos(updatedCompletedTodos);
         setMovingTodoIndex(null);
       }, 800); // Adjust the delay to match a transition duration
     }
@@ -85,7 +111,7 @@ function Todo() {
             type='text'
             placeholder='add to the list...'
             value={newTodo}
-            onChange={(e) => handleInputChange(e)}
+            onChange={handleInputChange}
           />
           <button
             type='submit'
@@ -93,7 +119,7 @@ function Todo() {
             Add
           </button>
         </form>
-        <ul className='space-y-2 min-h-24'>
+        <ul className='space-y-2 min-h-24 pb-8'>
           {todos.map((todo, index) => (
             <li
               key={index}
@@ -106,22 +132,32 @@ function Todo() {
               style={{
                 transition: 'opacity 0.8s ease-in-out',
               }}>
-              <span className=' min-w-72 text-center sm:text-left flex-1'>
-                {toUpperFirstLetter(todo)}
-              </span>
+              <div className='flex justify-center items-center gap-2 min-w-72'>
+                <input
+                  type='checkbox'
+                  className='checkbox-custom'
+                  checked={completedTodos[index]}
+                  onChange={() => toggleCompleteTodo(index)}
+                />
+                <label
+                  htmlFor={`todo-${index}`}
+                  className={`text-center sm:text-left md:flex-1 ${completedTodos[index] ? 'text-gray-500 line-through' : ''}`}>
+                  {toUpperFirstLetter(todo)}
+                </label>
+              </div>
               <div className='flex gap-2'>
                 <button
-                  className={deleteButton}
+                  className={`${buttonStyle} ${completedTodos[index] ? completedButtonDelete : deleteButton}`}
                   onClick={() => deleteTodo(index)}>
                   Delete
                 </button>
                 <button
-                  className={moveButton}
+                  className={`${buttonStyle} ${completedTodos[index] ? completedButtonMove : moveButton}`}
                   onClick={() => moveTodoUp(index)}>
                   Up
                 </button>
                 <button
-                  className={moveButton}
+                  className={`${buttonStyle} ${completedTodos[index] ? completedButtonMove : moveButton}`}
                   onClick={() => moveTaskDown(index)}>
                   Down
                 </button>
@@ -129,6 +165,7 @@ function Todo() {
             </li>
           ))}
         </ul>
+        <BackButton />
       </section>
     </>
   );
