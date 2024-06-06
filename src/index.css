@@ -18,3 +18,22 @@ body {
   content: '';
   @apply block w-2.5 h-5 border-emerald-600 border-r-2 border-b-2 transform rotate-45 translate-x-1 translate-y-[-6px];
 }
+
+.buttonStyle {
+  @apply w-full sm:w-fit sm:py-1 px-4 rounded-md font-bold text-white text-base sm:text-2xl;
+}
+
+.deleteButton {
+  @apply bg-rose-600 hover:bg-rose-700 focus:bg-rose-700;
+}
+
+.moveButton {
+  @apply bg-emerald-800 hover:bg-emerald-900 focus:bg-emerald-900;
+}
+.completedButtonDelete {
+  @apply bg-red-900 hover:bg-red-950 focus:bg-red-950;
+}
+
+.completedButtonMove {
+  @apply bg-cyan-900 hover:bg-cyan-950 focus:bg-cyan-950;
+}

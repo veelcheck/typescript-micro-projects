@@ -1,12 +1,6 @@
 import { ChangeEvent, useState } from 'react';
 import { useLocalStorage } from '../lib/hooks.ts';
-import BackButton from './BackButton.tsx';
-
-const buttonStyle = 'w-full sm:w-fit py-2 px-4 rounded-md font-bold text-white';
-const deleteButton = `bg-rose-600 hover:bg-rose-700 focus:bg-rose-700 ${buttonStyle}`;
-const moveButton = `bg-emerald-800 hover:bg-emerald-900 focus:bg-emerald-900 ${buttonStyle}`;
-const completedButtonDelete = 'bg-red-900 hover:bg-red-950 focus:bg-red-950';
-const completedButtonMove = 'bg-cyan-900 hover:bg-cyan-950 focus:bg-cyan-950';
+import HomeButton from './HomeButton.tsx';
 
 const toUpperFirstLetter = (string: string) =>
   string
@@ -104,6 +98,7 @@ function Todo() {
         </h1>
         <form
           className='flex gap-2'
+          name='todo-form'
           onSubmit={addTodo}>
           <input
             className='border-2 border-amber-600 py-4 px-2 rounded-md w-60 sm:w-96 focus:outline-none focus:ring-4 focus:ring-green-800 focus:border-none bg-gray-300'
@@ -123,7 +118,7 @@ function Todo() {
           {todos.map((todo, index) => (
             <li
               key={index}
-              className={`flex flex-col sm:flex-row items-center gap-1 md:gap-2 p-2 rounded-md font-bold text-2xl bg-gray-300 ${
+              className={`flex flex-col sm:flex-row items-center justify-between gap-1 md:gap-2 p-2 rounded-md font-bold text-2xl bg-gray-300 ${
                 movingTodoIndex !== null &&
                 (index === movingTodoIndex || index === movingTodoIndex - 1)
                   ? 'opacity-0'
@@ -135,29 +130,29 @@ function Todo() {
               <div className='flex justify-center items-center gap-2 min-w-72'>
                 <input
                   type='checkbox'
+                  id={index.toString()}
                   className='checkbox-custom'
                   checked={completedTodos[index]}
                   onChange={() => toggleCompleteTodo(index)}
                 />
-                <label
-                  htmlFor={`todo-${index}`}
-                  className={`text-center sm:text-left md:flex-1 ${completedTodos[index] ? 'text-gray-500 line-through' : ''}`}>
+                <span
+                  className={`text-center sm:text-left sm:flex-1 ${completedTodos[index] ? 'text-gray-500 line-through' : ''}`}>
                   {toUpperFirstLetter(todo)}
-                </label>
+                </span>
               </div>
               <div className='flex gap-2'>
                 <button
-                  className={`${buttonStyle} ${completedTodos[index] ? completedButtonDelete : deleteButton}`}
+                  className={`buttonStyle ${completedTodos[index] ? 'completedButtonDelete' : 'deleteButton'}`}
                   onClick={() => deleteTodo(index)}>
-                  Delete
+                  X
                 </button>
                 <button
-                  className={`${buttonStyle} ${completedTodos[index] ? completedButtonMove : moveButton}`}
+                  className={`buttonStyle ${completedTodos[index] ? 'completedButtonMove' : 'moveButton'}`}
                   onClick={() => moveTodoUp(index)}>
                   Up
                 </button>
                 <button
-                  className={`${buttonStyle} ${completedTodos[index] ? completedButtonMove : moveButton}`}
+                  className={`buttonStyle ${completedTodos[index] ? 'completedButtonMove' : 'moveButton'}`}
                   onClick={() => moveTaskDown(index)}>
                   Down
                 </button>
@@ -165,7 +160,7 @@ function Todo() {
             </li>
           ))}
         </ul>
-        <BackButton />
+        <HomeButton />
       </section>
     </>
   );
