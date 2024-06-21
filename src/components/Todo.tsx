@@ -142,16 +142,19 @@ function Todo() {
               </div>
               <div className='flex gap-2'>
                 <button
+                  type='button'
                   className={`buttonStyle ${completedTodos[index] ? 'completedButtonDelete' : 'deleteButton'}`}
                   onClick={() => deleteTodo(index)}>
                   X
                 </button>
                 <button
+                  type='button'
                   className={`buttonStyle ${completedTodos[index] ? 'completedButtonMove' : 'moveButton'}`}
                   onClick={() => moveTodoUp(index)}>
                   Up
                 </button>
                 <button
+                  type='button'
                   className={`buttonStyle ${completedTodos[index] ? 'completedButtonMove' : 'moveButton'}`}
                   onClick={() => moveTaskDown(index)}>
                   Down

@@ -51,7 +51,8 @@ function SnakeGame() {
           <p>Highest: {highestScore}</p>
           <button
             className='border rounded-sm px-2'
-            onClick={handleResetgame}>
+            onClick={handleResetgame}
+            type='reset'>
             RESET
           </button>
         </div>

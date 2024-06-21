@@ -7,6 +7,7 @@ import PageNotFound from './components/PageNotFound.tsx';
 import Todo from './components/Todo.tsx';
 import SnakeGame from './components/SnakeGame.tsx';
 import ParentComponent from './components/ParentComponent.tsx';
+import Form from './components/form/Form.tsx';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: 'child-to-parent',
     element: <ParentComponent />,
+  },
+  {
+    path: 'form',
+    element: <Form />,
   },
 ]);
 
