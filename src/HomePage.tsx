@@ -23,7 +23,7 @@ function HomePage() {
           description="Are you a parent? You think you're the top layer, but the children! Oh, they can talk back. This one is doing just that. It's probably a teenager. How do you React, component?"
         />
         <ProjectLink
-          to='form'
+          to='hook-form'
           title='React Hook Form'
           description='Well, a React Hook Form.'
         />

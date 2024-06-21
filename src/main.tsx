@@ -7,7 +7,7 @@ import PageNotFound from './components/PageNotFound.tsx';
 import Todo from './components/todo/Todo.tsx';
 import SnakeGame from './components/snake/SnakeGame.tsx';
 import ParentComponent from './components/childToParent/ParentComponent.tsx';
-import Form from './components/form/Form.tsx';
+import HookForm from './components/form/HookForm.tsx';
 
 const router = createBrowserRouter([
   {
@@ -28,8 +28,8 @@ const router = createBrowserRouter([
     element: <ParentComponent />,
   },
   {
-    path: 'form',
-    element: <Form />,
+    path: 'hook-form',
+    element: <HookForm />,
   },
 ]);
 
