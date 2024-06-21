@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ChildComponent from './ChildComponent';
-import HomeButton from './HomeButton';
+import HomeButton from '../HomeButton';
 
 function ParentComponent() {
   const [dataFromChild, setDataFromChild] = useState('');

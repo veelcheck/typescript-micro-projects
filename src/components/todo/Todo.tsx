@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from 'react';
-import { useLocalStorage } from '../lib/hooks.ts';
-import HomeButton from './HomeButton.tsx';
+import { useLocalStorage } from '../../lib/hooks.ts';
+import HomeButton from '../HomeButton.tsx';
 
 const toUpperFirstLetter = (string: string) =>
   string

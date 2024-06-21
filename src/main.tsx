@@ -4,9 +4,9 @@ import HomePage from './HomePage.tsx';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import PageNotFound from './components/PageNotFound.tsx';
-import Todo from './components/Todo.tsx';
-import SnakeGame from './components/SnakeGame.tsx';
-import ParentComponent from './components/ParentComponent.tsx';
+import Todo from './components/todo/Todo.tsx';
+import SnakeGame from './components/snake/SnakeGame.tsx';
+import ParentComponent from './components/childToParent/ParentComponent.tsx';
 import Form from './components/form/Form.tsx';
 
 const router = createBrowserRouter([

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { useLocalStorage } from '../lib/hooks';
+import { useLocalStorage } from '../../lib/hooks';
 import GameBoard from './GameBoard';
 import AliceComponent from './AliceComponent';
-import HomeButton from './HomeButton';
+import HomeButton from '../HomeButton';
 
 function SnakeGame() {
   const [score, setScore] = useState(0);
