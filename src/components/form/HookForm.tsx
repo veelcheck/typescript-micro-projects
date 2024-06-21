@@ -15,6 +15,7 @@ function HookForm() {
   const onSubmit = async (data: FieldValues) => {
     // We are not really submiting, are we?
     await new Promise((resolve) => setTimeout(resolve, 1000));
+    console.log(data); //I had to use data for Netlify to build correctly.
     reset();
   };
 
