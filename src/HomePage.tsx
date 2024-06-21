@@ -2,8 +2,8 @@ import ProjectLink from './components/ProjectLink.tsx';
 
 function HomePage() {
   return (
-    <section className='container p-2 mx-auto font-mono text-center mt-6'>
-      <h1 className='text-amber-50 uppercase font-bold '>
+    <section className='container p-2 mx-auto font-mono text-center min-h-screen flex flex-col justify-center items-center'>
+      <h1 className='text-amber-50 uppercase font-bold text-3xl'>
         Small projects to practice TypeScript
       </h1>
       <ul className='flex flex-col gap-4 mt-4 items-center'>

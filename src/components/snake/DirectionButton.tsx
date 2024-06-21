@@ -15,7 +15,7 @@ function DirectionButton({
 }: DirectionButtonProps) {
   return (
     <button
-      className='border-4 size-12 rounded-full'
+      className='border-4 size-12 rounded-full '
       onClick={() => setDirection(direction)}>
       {children}
     </button>

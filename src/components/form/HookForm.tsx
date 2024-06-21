@@ -21,13 +21,12 @@ function HookForm() {
 
   return (
     <section className='container mx-auto p-2 min-h-screen flex flex-col justify-center items-center'>
-      <HomeButton />
       <h1 className='text-amber-500 uppercase text-4xl text-center py-4'>
         React Hook Form
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className='flex flex-col gap-y-2 my-4'>
+        className='flex flex-col gap-y-2 my-4 py-4'>
         <input
           // we are spreading register to have access to all the props
           {...register('email', {
@@ -80,6 +79,7 @@ function HookForm() {
           Submit
         </button>
       </form>
+      <HomeButton />
     </section>
   );
 }
